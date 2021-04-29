@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Rating</title>
+    <link rel="stylesheet" type= 'text/css' href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka One">
+</head>
+<body>
+    <header>
+         <h1>MOBILE REVIEW SENTIMENT</h1>
+    </header>
+    
+    <div class = "result">
+         <img src="{{ imgdata }}" alt="output-img" class="pred-img">
+    </div>
+    <div class = res-text>
+        <p class='r-text'>
+            {{ textout }}
+        </p>
+    </div>
+</body>
+</html>
+
+<style>
+    *{
+        max-width: 100%;
+        padding:0px;
+        font-family: sans-serif;
+    
+    }
+    html{
+        font-size: 62.5%;
+    }
+    @media(max-width:998px){
+        html{
+            font-size: 55%;
+        }
+    }
+    @media(max-width:768px){
+        html{
+            font-size: 45%;
+        }
+    }
+
+    body{
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../../static/bg.jpg);
+        
+        background-size: cover;
+        background-position: center ;
+    }
+    header{
+        background-color: rgba(218, 169, 10, 0.253);
+        max-width: 100%;
+        height:auto;
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
+    }
+    h1{
+    text-align: center;
+    color: #e7aaaa;
+    font-family: "Audiowide",sans-serif;
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    text-shadow: 4px 4px 4px rgb(64 7 7);
+    }
+    .pred-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    margin-top: 20rem;
+    margin-bottom: 10rem;
+    }
+    .r-text{
+        text-align: center;
+        margin-top: 2.5rem;
+        font-size: 3.5rem;
+        font-family: "Fredoka One",sans-serif;
+        background-color: white;
+    }
+    
+</style>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Rating</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mandali">
+</head>
+<body>
+    <header>
+         <h1>MOBILE REVIEW SENTIMENT</h1>
+    </header>
+    <div class='inputbox'>
+        <form action="{{ url_for('predict')}}" method="post">
+          <textarea class="reviewbox" name= "review" cols="100" rows="20" placeholder="Enter your Review Here..."></textarea><br>
+          <input type="submit" class= "pred-button" value="Show Sentiment">
+        </form>
+    </div>
+    <div class = "result">
+         <img src="{{ data }}" alt="output">
+    </div>
+    <footer>
+        <h5>
+            Created by SANCHAR BANERJEE using Natural Language Processing and Machine Learning 
+        </h5>
+    </footer>
+</body>
+</html>
+
+<style>
+    *{
+        max-width: 100%;
+        padding:0px;
+        font-family: sans-serif;
+    
+    }
+    html{
+        font-size: 62.5%;
+    }
+    @media(max-width:998px){
+        html{
+            font-size: 55%;
+        }
+    }
+    @media(max-width:768px){
+        html{
+            font-size: 45%;
+        }
+    }
+
+    body{
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../../static/bg.jpg);
+        
+        background-size: cover;
+        background-position: center ;
+    }
+    header{
+        background-color: rgba(218, 169, 10, 0.253);
+        max-width: 100%;
+        height:auto;
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
+    }
+    h1{
+    text-align: center;
+    color: #e7aaaa;
+    font-family: "Audiowide",sans-serif;
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    text-shadow: 4px 4px 4px rgb(64 7 7);
+    }
+    .inputbox{
+    position: relative;
+    margin-left: -5rem;
+    margin-right: 15rem;
+    margin-top: 5rem;
+    left:9rem;
+    display:flex;
+    justify-content: center;
+    }
+    .pred-button{
+        margin-left:25%;
+        margin-right:25%;
+        width: 50%;
+        margin-top: 0.2rem;
+        text-decoration: none;
+        font-size: 1.8rem;
+        background-color: #9dd60666;
+        color:  rgb(224 156 128);
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: bold;
+        padding: 1rem 1rem;
+        border-width: 0.2rem;
+        border-radius: 3rem; 
+        border-color: rgb(41 36 34); 
+        border-style:groove; 
+        transition: 0.6s ease;
+        display:flex;
+        justify-content: center;
+    }
+    .pred-button:hover{
+        background-color:rgb(36, 5, 5);
+        border-color:#9dd60666 ;
+    }
+    .reviewbox{
+        border-radius: 3rem;
+        padding: 1.5rem;
+        font-size: 1.8rem;
+        border-color:  rgba(0, 0, 0, .4);
+        border-width: 0.5rem;
+        background-color:rgb(237 100 185 / 44%)
+    }
+    ::placeholder{
+        color: black;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 2rem;
+    }    
+    footer{
+        background-color: rgba(245, 195, 32, 0.87);
+        max-width: 100%;
+        height:auto;
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
+    }
+    h5{
+    text-align: center;
+    color: #000000;
+    font-family: "Mandali",sans-serif;
+    font-size: 1.8rem;
+    margin-top: 10rem;
+    margin-bottom: 1rem;
+    }
+</style>
